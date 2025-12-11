@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>แบบฝึกหัดที่5</title>
+</head>
+
+<body>
+    <h2>สร้างเว็บโต้ตอบได้จาการ "พิมพ์" และ "เลือก"</h2>
+    <p id="show-name">พิมชื่อ:</p>
+    <input id="name-input" placeholder="กรุณากรอกชื่อ" type='text'>
+    <button onclick="sayhello()">ตกลง</button>
+
+    <h2>ทดสอบการเลือกแบบ Select</h2>
+    <p id="show-lage">ข้อความที่อ่านได้</p>
+    <select id="select-lage">
+        <option>โปรดเลือกตัวเลือก</option>
+        <option>JavaScript</option>
+        <option>Python</option>
+        <option>Go</option>
+    </select>
+
+    <script>
+        // เมื่อพิมพ์ชื่อ
+        const messageInputElement = document.getElementById('name-input')
+        messageInputElement.addEventListener("input", function () {
+            const message = this.value
+            const showMessageElement = document.getElementById('show-name')
+            showMessageElement.innerText = 'ยินดีต้อนรับ ' + message
+        })
+
+        // เมื่อเลือกจาก select
+        const messageSelectElement = document.getElementById('select-lage')
+        messageSelectElement.addEventListener("change", function () {
+            const message = this.value
+            const showMessageElement = document.getElementById('show-lage')
+            showMessageElement.innerText = 'ข้อความที่อ่านได้: ' + message
+        })
+
+        // เมื่อกดปุ่ม
+        function sayhello() {
+            alert("ยินดีต้อนรับ")
+        }
+    </script>
+</body>
+</html>
