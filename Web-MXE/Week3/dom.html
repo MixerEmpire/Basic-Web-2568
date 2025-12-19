@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>เรียน Advand</title>
+
+    <head>
+        <title>Profile ของฉัน</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Niramit:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"
+            rel="stylesheet">
+        <style>
+            .niramit-extralight {
+                font-family: "Niramit", sans-serif;
+                font-weight: 200;
+                font-style: normal;
+            }
+
+            .niramit-light {
+                font-family: "Niramit", sans-serif;
+                font-weight: 300;
+                font-style: normal;
+            }
+
+            .niramit-regular {
+                font-family: "Niramit", sans-serif;
+                font-weight: 400;
+                font-style: normal;
+            }
+
+            .niramit-medium {
+                font-family: "Niramit", sans-serif;
+                font-weight: 500;
+                font-style: normal;
+            }
+
+            .niramit-semibold {
+                font-family: "Niramit", sans-serif;
+                font-weight: 600;
+                font-style: normal;
+            }
+
+            .niramit-bold {
+                font-family: "Niramit", sans-serif;
+                font-weight: 700;
+                font-style: normal;
+            }
+
+            .niramit-extralight-italic {
+                font-family: "Niramit", sans-serif;
+                font-weight: 200;
+                font-style: italic;
+            }
+
+            .niramit-light-italic {
+                font-family: "Niramit", sans-serif;
+                font-weight: 300;
+                font-style: italic;
+            }
+
+            .niramit-regular-italic {
+                font-family: "Niramit", sans-serif;
+                font-weight: 400;
+                font-style: italic;
+            }
+
+            .niramit-medium-italic {
+                font-family: "Niramit", sans-serif;
+                font-weight: 500;
+                font-style: italic;
+            }
+
+            .niramit-semibold-italic {
+                font-family: "Niramit", sans-serif;
+                font-weight: 600;
+                font-style: italic;
+            }
+
+            .niramit-bold-italic {
+                font-family: "Niramit", sans-serif;
+                font-weight: 700;
+                font-style: italic;
+            }
+
+            body {
+                background-color: wheat;
+            }
+
+            .header-text {
+                text-align: center;
+                color: rgb(0, 0, 0);
+            }
+
+            .header-container {
+                background-color: rgb(255, 0, 0);
+                padding: 1;
+                border-radius: 10px;
+                width: 60%;
+            }
+
+            .flex-header {
+                display: flex;
+                justify-content: center;
+            }
+
+            .img-container img {
+                padding: 2%;
+                display: block;
+                margin: 0 auto;
+
+            }
+
+            .nav-menu-container {
+                background-color: rgb(68, 161, 243);
+                margin-top: 1%;
+                margin-bottom: 1%;
+                padding: 1%;
+                border-radius: 10px;
+            }
+
+            .nav-menu-item {
+                margin-left: 1%;
+                margin-right: 1%;
+                text-decoration: none;
+                color: rgb(0, 17, 255)
+            }
+        </style>
+    </head>
+
+<body>
+    <div class="flex-header nav-menu-container niramit-medium">
+        <a class="nav-menu-item" href="index.html">หน้าแรก</a>
+        <a class="nav-menu-item" href="https://www.facebook.com/">Facebook ของฉัน</a>
+        <a class="nav-menu-item" href="../Week2/index.html">บทเรียนสัปดาห์ที่2</a>
+        <a class="nav-menu-item" href="../Week3/dom.html">บทเรียนDom และ Bom</a>
+    </div>
+    <div class="flex-header niramit-regular">
+        <h2>เรียนเรื่อง Get Element By Tag Name</h2>
+    </div>
+
+    <script>
+        const aTags = document.getElementsByTagName('a')
+        console.log(aTags[1])
+
+        const navMenuClassItem =document.getElementsByClassName('nav-menu-item')
+        navMenuClassItem[1].innerText = 'เปลี่ยนข้อความดู'
+    </script>
+</body>
+
+</html>

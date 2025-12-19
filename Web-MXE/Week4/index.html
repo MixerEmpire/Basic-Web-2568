@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Week4 - Project Overview</title>
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Week 4</h1>
+        <h2>Project Overview</h2>
+
+        <h1 id="greeting">สวัสดีคุณ [ชื่อ]</h1>
+
+        <button class="info-btn" onclick="showUserInfo()">แสดงข้อมูลผู้ใช้</button>
+        <button class="refresh-btn" onclick="window.location.reload()">รีเฟรชหน้า</button>
+        <button class="open-btn" onclick="openNewWindow()">เปิดหน้าต่างใหม่</button>
+
+        <button class="dark-btn" onclick="toggleDarkMode()">🌙 Dark Mode</button>
+    </div>
+
+    <script>
+        const userName = window.prompt('กรุณากรอกชื่อ');
+        if (userName) {
+            document.getElementById("greeting").innerText = "สวัสดีคุณ " + userName;
+        }
+
+        function showUserInfo() {
+            const userAgent = navigator.userAgent;
+            const language = navigator.language;
+            const width = screen.width;
+            const height = screen.height;
+
+            alert(`ข้อมูลผู้ใช้:
+User Agent: ${userAgent}
+Language: ${language}
+Screen Width: ${width}
+Screen Height: ${height}`);
+        }
+
+        function openNewWindow() {
+            window.open("https://example.com");
+        }
+
+        function toggleDarkMode() {
+            document.body.classList.toggle("dark");
+
+            const btn = document.querySelector(".dark-btn");
+            if (document.body.classList.contains("dark")) {
+                btn.innerText = "☀️ Light Mode";
+            } else {
+                btn.innerText = "🌙 Dark Mode";
+            }
+        }
+                //การบ้านแจ้งเตื่อนระบบการเข้าถึงข้อมูล
+                
+        // ===== ระบบแจ้งเตือนเวอร์ชันและการเข้าถึง =====
+
+        // แสดง Browser และ Version เมื่อเปิดหน้าเว็บ
+        alert("Browser Info:\n" + navigator.userAgent);
+
+        // ตรวจสอบสถานะออนไลน์ / ออฟไลน์
+        if (navigator.onLine) {
+            alert("คุณออนไลน์แล้ว");
+        } else {
+            alert("คุณกำลังออฟไลน์ โปรดเชื่อมต่ออินเทอร์เน็ต");
+        }
+
+        // ตรวจจับกรณีเน็ตหลุดหรือกลับมา (เสริม คะแนนบวก)
+        window.addEventListener("online", () => {
+            alert("การเชื่อมต่ออินเทอร์เน็ตกลับมาแล้ว");
+        });
+
+        window.addEventListener("offline", () => {
+            alert("การเชื่อมต่ออินเทอร์เน็ตถูกตัด");
+        });
+    </script>
+
+</body>
+
+</html>
