@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>การบ้าน ทำให้ครบทุก type</title>
+    <style>
+        body {
+            background-color: #f5f1f1;
+
+        }
+
+        button {
+            color: rgb(255, 255, 255);
+            font-size: 20px;
+            background-color: rgb(0, 140, 255);
+
+        }
+
+        h2 {
+            font-size: xx-large;
+
+            color: rgb(0, 0, 0);
+
+        }
+    </style>
+</head>
+
+<body>
+    <h2>ยินดีตอนรับทุกคน</h2>
+    <p>ชื่อ</p>
+    <input id="msg-input" placeholder="กรอกข้อความ" type='text'>
+
+    <p>รหัสผ่าน</p>
+    <input id="pass-input" type="password">
+
+    <p>จำนวน Achievement ที่ได้</p>
+    <input id="num-input" type="number">
+
+    <p>วันที่</p>
+    <input id="date-input" type="date">
+
+    <p>เวลาที่จะเล่น</p>
+    <input id="time-input" type="time">
+
+    <h2>ยอมรับเงื่อนไขที่กำหนด</h2>
+    <p>ยืนยันว่าที่<strong>กรอกข้อมูล</strong>เป็นจริง</p>
+    <br>
+    <label>ยอมรับ01</label>
+    <input id="check1" type="checkbox">
+    <label>ยอมรับ02</label>
+    <input id="check2" type="checkbox">
+    <label>ยอมรับ03</label>
+    <input id="check3" type="checkbox">
+    <br><br>
+
+    <h2>เลือกสี</h2>
+    <p>สีที่ชอบ</p>
+    <input id="color-input" type="color">
+
+    <h2>เลือกประเทศที่ชอบ Select</h2>
+    <p id="show-select">ข้อความที่อ่านได้</p>
+    <select id="select-input">
+        <option>โปรดเลือกตัวเลือก</option>
+        <option>ไทย</option>
+        <option>สหรัฐอเมริกา</option>
+        <option>อังกฤษ</option>
+        <option>เยอรมัน</option>
+    </select>
+
+    <br><br>
+
+    <!-- ปุ่ม Submit -->
+    <button id="submit-btn">Submit</button>
+    <button id="reset-btn">Reset</button>
+
+
+    <script>
+        // อ่านค่าจาก input text
+        const msgInputElement = document.getElementById('msg-input')
+        msgInputElement.addEventListener("input", function () {
+            const msg = this.value
+            const showMsgelement = document.getElementById('show-msg')
+            showMsgelement.innerText = 'ข้อความที่อ่านได้: ' + msg
+        })
+
+        // อ่านค่าจาก select
+        const msgSelectElement = document.getElementById('select-input')
+        msgSelectElement.addEventListener("change", function () {
+            const msg = this.value
+            const showMsgelement = document.getElementById('show-select')
+            showMsgelement.innerText = 'ข้อความที่อ่านได้: ' + msg
+        })
+
+        // ปุ่ม Submit
+        const submitBtn = document.getElementById('submit-btn')
+        submitBtn.addEventListener("click", function () {
+
+
+
+            // เก็บข้อมูลทุกช่อง
+            const nameValue = document.getElementById("msg-input").value
+            const passValue = document.getElementById("pass-input").value
+            const numValue = document.getElementById("num-input").value
+            const dateValue = document.getElementById("date-input").value
+            const timeValue = document.getElementById("time-input").value
+            const colorValue = document.getElementById("color-input").value
+            const countryValue = document.getElementById("select-input").value
+
+            const check1 = document.getElementById("check1").checked
+            const check2 = document.getElementById("check2").checked
+            const check3 = document.getElementById("check3").checked
+            // ปุ่ม Reset
+            const resetBtn = document.getElementById('reset-btn')
+            resetBtn.addEventListener("click", function () {
+
+                document.getElementById("msg-input").value = ""
+                document.getElementById("pass-input").value = ""
+                document.getElementById("num-input").value = ""
+                document.getElementById("date-input").value = ""
+                document.getElementById("time-input").value = ""
+                document.getElementById("color-input").value = "#000000"
+
+                document.getElementById("select-input").value = "โปรดเลือกตัวเลือก"
+                document.getElementById("show-select").innerText = "ข้อความที่อ่านได้"
+
+                document.getElementById("check1").checked = false
+                document.getElementById("check2").checked = false
+                document.getElementById("check3").checked = false
+
+                alert("ล้างข้อมูลเรียบร้อย!")
+            })
+
+
+            // แจ้งเตือน
+            alert(
+                "ชื่อ: " + nameValue +
+                "\nรหัสผ่าน: " + passValue +
+                "\nจำนวน Achievement: " + numValue +
+                "\nวันที่: " + dateValue +
+                "\nเวลา: " + timeValue +
+                "\nยอมรับ01: " + check1 +
+                "\nยอมรับ02: " + check2 +
+                "\nยอมรับ03: " + check3 +
+                "\nสีที่เลือก: " + colorValue +
+                "\nประเทศที่เลือก: " + countryValue
+            );
+        })
+    </script>
+</body>
+
+</html>
