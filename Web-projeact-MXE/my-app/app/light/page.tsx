@@ -7,7 +7,7 @@ function LightPage() {
     return (
         <div>
             <div className="text-center mt-6 p-4">
-                <h1 className="text-3xl bg-red-500">
+                <h1 className="text-3xl bg-red-500 border-4 border-black p-2 text-white">
                     บทเรียนที่ 1: State ของการเปิด/ปิด หลอดไฟ
                 </h1>
             </div>
